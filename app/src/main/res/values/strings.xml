@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Water Pack</string>
     <string name="submit">Submit</string>
     <string name="calculate">Calculate</string>
@@ -8,4 +8,11 @@
     <string name="height">Height</string>
     <string name="username">Username:</string>
     <string name="enter_your_information">Enter Your Information</string>
+    <string name="add_water">Add Water</string>
+    <string name="add_custom_amount_of_water">Add Custom Amount of Water:</string>
+    <string name="_8_oz">+ 8 oz.</string>
+    <string name="_16_oz">+ 16 oz.</string>
+    <string name="_32_oz">+ 32 oz.</string>
+    <string name="total_water_consumption_today">Total water consumption today:</string>
+    <string name="_0_oz">0 oz</string>
 </resources>
