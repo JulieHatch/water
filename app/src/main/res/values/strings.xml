@@ -16,4 +16,6 @@
     <string name="total_water_consumption_today">Total water consumption today:</string>
     <string name="_0_oz">0 oz</string>
     <string name="add_user">Add User</string>
+    <string name="_0">0%</string>
+    <string name="acomplished_water_goal_percentage">Accomplished water goal percentage</string>
 </resources>

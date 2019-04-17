@@ -2,24 +2,22 @@ package com.example.waterpack;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class AddWater extends AppCompatActivity {
-    // set variables
-    String tag                  = "Add_Water";
     final String MY_PREFS_NAME  = "MyPrefsFile";
 
     Button   add_custom,
              add_8,
              add_16,
              add_32;
-    TextView total_water;
+    TextView total_water,
+             today_percentage;
     EditText custom;
 
     @Override
@@ -37,6 +35,7 @@ public class AddWater extends AppCompatActivity {
         add_32      = findViewById(R.id.add_32oz_water_button);
         add_custom  = findViewById(R.id.add_custom_water_button);
         total_water = findViewById(R.id.total_water_today);
+        today_percentage = findViewById(R.id.today_percentage);
         custom      = findViewById(R.id.add_custom_water);
 
         // ADD 8 OZ TO DAILY INTAKE TOTAL
@@ -46,8 +45,10 @@ public class AddWater extends AppCompatActivity {
             public void onClick(View v) {
                 float total = prefs.getFloat("waterToday", 0) + 8;
                 editor.putFloat("waterToday", total);
+                float per = total/prefs.getFloat("water", 0);
                 editor.apply();
                 total_water.setText(String.valueOf(total));
+                today_percentage.setText(String.valueOf(per*100));
             }
         });
 
@@ -58,8 +59,10 @@ public class AddWater extends AppCompatActivity {
             public void onClick(View v) {
                 float total = prefs.getFloat("waterToday", 0) + 16;
                 editor.putFloat("waterToday", total);
+                float per = total/prefs.getFloat("water", 0);
                 editor.apply();
                 total_water.setText(String.valueOf(total));
+                today_percentage.setText(String.valueOf(per*100));
             }
         });
 
@@ -70,8 +73,10 @@ public class AddWater extends AppCompatActivity {
             public void onClick(View v) {
                 float total = prefs.getFloat("waterToday", 0) + 32;
                 editor.putFloat("waterToday", total);
+                float per = total/prefs.getFloat("water", 0);
                 editor.apply();
                 total_water.setText(String.valueOf(total));
+                today_percentage.setText(String.valueOf(per*100));
             }
         });
 
@@ -82,9 +87,11 @@ public class AddWater extends AppCompatActivity {
             public void onClick(View v) {
                 float custom_amount = Float.parseFloat(custom.getText().toString());
                 float total = prefs.getFloat("waterToday", 0) + custom_amount;
+                float per = total/prefs.getFloat("water", 0);
                 editor.putFloat("waterToday", total);
                 editor.apply();
                 total_water.setText(String.valueOf(total));
+                today_percentage.setText(String.valueOf(per*100));
             }
         });
 

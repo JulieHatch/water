@@ -46,8 +46,8 @@ public class User {
         According to the mayo clinic this is how much males and females should drink a day
         Site: https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/water/art-20044256
         */
-        if(gender=='f') wpd = (float) 11.5;
-        if(gender=='m') wpd = (float) 15.5;
-        this.waterPerDay = wpd;
+        if(gender=='f') wpd = (float) 92;
+        if(gender=='m') wpd = (float) 124;
+        this.waterPerDay    = wpd;
     }
 }
